@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DC258D424D1244A00CB764D /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC258D324D1244A00CB764D /* TrackerViewController.swift */; };
+		5DC258D824D1307100CB764D /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC258D724D1307100CB764D /* ToDo.swift */; };
+		5DC258DC24D14D5600CB764D /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC258DB24D14D5600CB764D /* AddToDoViewController.swift */; };
 		B5EAD78A24CED94E000C494D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EAD78924CED94E000C494D /* AppDelegate.swift */; };
 		B5EAD78C24CED94E000C494D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EAD78B24CED94E000C494D /* SceneDelegate.swift */; };
 		B5EAD78E24CED94E000C494D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EAD78D24CED94E000C494D /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DC258D324D1244A00CB764D /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		5DC258D724D1307100CB764D /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		5DC258DB24D14D5600CB764D /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		B5EAD78624CED94E000C494D /* cloudDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cloudDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EAD78924CED94E000C494D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5EAD78B24CED94E000C494D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		B5EAD77D24CED94E000C494D = {
 			isa = PBXGroup;
 			children = (
+				5DC258D724D1307100CB764D /* ToDo.swift */,
 				B5EAD78824CED94E000C494D /* cloudDiary */,
 				B5EAD7A224CED952000C494D /* cloudDiaryTests */,
 				B5EAD7AD24CED952000C494D /* cloudDiaryUITests */,
@@ -105,6 +112,8 @@
 				B5EAD78B24CED94E000C494D /* SceneDelegate.swift */,
 				B5EAD78D24CED94E000C494D /* ViewController.swift */,
 				B5EAD78F24CED94E000C494D /* Main.storyboard */,
+				5DC258DB24D14D5600CB764D /* AddToDoViewController.swift */,
+				5DC258D324D1244A00CB764D /* TrackerViewController.swift */,
 				B5EAD79524CED952000C494D /* Assets.xcassets */,
 				B5EAD79724CED952000C494D /* LaunchScreen.storyboard */,
 				B5EAD79A24CED952000C494D /* Info.plist */,
@@ -262,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC258D424D1244A00CB764D /* TrackerViewController.swift in Sources */,
 				B5EAD78E24CED94E000C494D /* ViewController.swift in Sources */,
 				B5EAD78A24CED94E000C494D /* AppDelegate.swift in Sources */,
+				5DC258D824D1307100CB764D /* ToDo.swift in Sources */,
+				5DC258DC24D14D5600CB764D /* AddToDoViewController.swift in Sources */,
 				B5EAD78C24CED94E000C494D /* SceneDelegate.swift in Sources */,
 				B5EAD79424CED94E000C494D /* cloudDiary.xcdatamodeld in Sources */,
 			);
