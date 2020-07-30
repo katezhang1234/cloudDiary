@@ -367,16 +367,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUl-6P-OWl">
-                                <rect key="frame" x="356" y="161" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.56680506580000001" green="0.67076747250000002" blue="0.88471596509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <segue destination="e2J-7a-hJJ" kind="show" id="2FF-F6-4yY"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friday, July 31st" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R56-JG-iou">
                                 <rect key="frame" x="0.0" y="75" width="414" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -445,6 +435,26 @@
                                 <state key="normal" title="Button" image="brand-icon-png-22"/>
                                 <connections>
                                     <segue destination="juq-Km-1QO" kind="presentation" modalPresentationStyle="fullScreen" id="KmR-2v-xW5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUl-6P-OWl">
+                                <rect key="frame" x="357" y="181" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.56680506580000001" green="0.67076747250000002" blue="0.88471596509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="e2J-7a-hJJ" kind="show" id="2FF-F6-4yY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97g-ZQ-gtl">
+                                <rect key="frame" x="328" y="48" width="73" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home" image="house.fill" catalog="system">
+                                    <color key="titleColor" red="0.6431990715" green="0.72821147230000005" blue="0.89404643790000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ln4-95-D8w"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1119,6 +1129,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ln4-95-D8w"/>
         <segue reference="TYU-4N-N8J"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1131,6 +1142,7 @@
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="habit-icon-13" width="512" height="512"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="textformat" catalog="system" width="128" height="80"/>
     </resources>
