@@ -19,6 +19,8 @@ class EditEntries: UIViewController {
                 editSubtitle.text = coreDataEntries[Selected.current.index].subtitle
             }
         }
+        
+        setInterface()
     }
     
     @IBOutlet weak var editTitle: UITextView!
@@ -33,6 +35,18 @@ class EditEntries: UIViewController {
                 try? context.save()
                 navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    func setInterface(){
+        if Stored.preferences.isDark{
+            overrideUserInterfaceStyle = .dark
+            editTitle.textColor = UIColor.white
+            editSubtitle.textColor = UIColor.white
+        }else{
+            overrideUserInterfaceStyle = .light
+            editTitle.textColor = UIColor.black
+            editSubtitle.textColor = UIColor.black
         }
     }
 }

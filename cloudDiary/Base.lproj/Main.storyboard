@@ -1031,7 +1031,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Settings">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="label" size="21"/>
+                                                        <font key="NSFont" metaFont="system" size="21"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -1149,6 +1149,7 @@
                     <connections>
                         <outlet property="collapseAppearance" destination="Pd3-mP-pkc" id="gnO-UJ-mjQ"/>
                         <outlet property="collapseLabel" destination="HyS-cl-q2M" id="DWc-wL-V9P"/>
+                        <outlet property="darkToggleAppearance" destination="V21-bl-k9R" id="HYg-EK-byH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z4-MD-obI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

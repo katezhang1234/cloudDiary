@@ -29,6 +29,7 @@ class Settings: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setExpandProperties()
+        setInterface()
     }
    
     
@@ -43,7 +44,15 @@ class Settings: UIViewController {
         setExpandProperties()
     }
     
+    @IBOutlet weak var darkToggleAppearance: UISwitch!
+    
     @IBAction func darkModeToggle(_ sender: UISwitch) {
+        if Stored.preferences.isDark{
+            Stored.preferences.isDark = false
+        }else{
+            Stored.preferences.isDark = true
+        }
+        setInterface()
     }
     
     @IBAction func notificationsToggle(_ sender: UISwitch) {
@@ -59,6 +68,16 @@ class Settings: UIViewController {
         }else{
             collapseLabel.text = "Content View: Collapsed"
             collapseAppearance.isOn = false
+        }
+    }
+    
+    func setInterface(){
+        if Stored.preferences.isDark{
+            overrideUserInterfaceStyle = .dark
+            darkToggleAppearance.isOn = true
+        }else{
+            overrideUserInterfaceStyle = .light
+            darkToggleAppearance.isOn = false
         }
     }
 }

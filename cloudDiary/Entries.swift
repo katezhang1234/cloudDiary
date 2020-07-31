@@ -22,10 +22,12 @@ class Entries: UITableViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        setInterface()
     }
     
     override func viewWillAppear(_ animated: Bool){
         getEntries()
+        setInterface()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -92,7 +94,12 @@ class Entries: UITableViewController {
                }
            }
        }
-        
-        //tableView.deselectRow(at: indexPath, animated: true)
-    }
+        func setInterface(){
+            if Stored.preferences.isDark{
+                overrideUserInterfaceStyle = .dark
+            }else{
+                overrideUserInterfaceStyle = .light
+            }
+        }
+}
 
