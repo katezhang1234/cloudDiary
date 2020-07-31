@@ -22,7 +22,18 @@ class SleepTrackerViewController: UIViewController {
     @IBAction func enterButtonTapped(_ sender: Any) {
         
         if let newTitle = hoursText.text{
-            message.text = "Wow! You slept well last night!"
+            if let hours = Int(newTitle){
+                if hours > 8{
+                    message.text = "Wow! You slept well last night!"
+                }else if hours > 6{
+                    message.text = "Are you feeling a bit tired?"
+                }else if hours > 4{
+                    message.text = "You must be exhausted!"
+                }else{
+                    message.text = "How are you alive?"
+                }
+                hoursText.text = ""
+            }
         }
     }
     
