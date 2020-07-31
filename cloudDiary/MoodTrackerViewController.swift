@@ -25,35 +25,35 @@ class MoodTrackerViewController: UIViewController {
     }
     
     @IBAction func happyTapped(_ sender: Any) {
-        self.happyButton.backgroundColor = UIColor.systemGray5
+        self.happyButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func excitedTapped(_ sender: Any) {
-          self.excitedButton.backgroundColor = UIColor.systemGray5
+          self.excitedButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func curiousTapped(_ sender: Any) {
-         self.curiousButton.backgroundColor = UIColor.systemGray5
+         self.curiousButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func lazyTapped(_ sender: Any) {
-        self.lazyButton.backgroundColor = UIColor.systemGray5
+        self.lazyButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func tiredTapped(_ sender: Any) {
-         self.tiredButton.backgroundColor = UIColor.systemGray5
+         self.tiredButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func lonelyTappen(_ sender: Any) {
-        self.lonelyButton.backgroundColor = UIColor.systemGray5
+        self.lonelyButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func sadTapped(_ sender: Any) {
-        self.sadButton.backgroundColor = UIColor.systemGray5
+        self.sadButton.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func boredTapped(_ sender: Any) {
-        self.boredButton.backgroundColor = UIColor.systemGray5
+        self.boredButton.backgroundColor = UIColor.systemGray4
     }
     
     

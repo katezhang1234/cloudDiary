@@ -20,7 +20,8 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
    func createToDos() -> [ToDo]{
          let swift = ToDo()
          swift.name = "Learn Swift"
@@ -31,7 +32,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         clean.name = "Clean bedroom"
         let read = ToDo()
         read.name = "Read Harry Potter"
-         
+          
          return [swift, dog, clean, read]
      }
      
@@ -61,16 +62,5 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
          
      }
 
-
-
-/* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if let addVC = segue.destination as?
-         AddToDoViewController {
-             addVC.previousVC = self
-         }
-         
-     }
- 
-*/
 
 }

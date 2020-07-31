@@ -23,20 +23,20 @@ class HabitTrackerViewController: UIViewController {
     }
     
     @IBAction func button1change(_ sender: Any) {
-        self.button1.backgroundColor = UIColor.systemGray5
+        self.button1.backgroundColor = UIColor.systemGray4
     }
     @IBAction func button2change(_ sender: Any) {
-        self.button2.backgroundColor = UIColor.systemGray5
+        self.button2.backgroundColor = UIColor.systemGray4
     }
     
     @IBAction func button3change(_ sender: Any) {
-        self.button3.backgroundColor = UIColor.systemGray5
+        self.button3.backgroundColor = UIColor.systemGray4
     }
     @IBAction func button4change(_ sender: Any) {
-        self.button4.backgroundColor = UIColor.systemGray5
+        self.button4.backgroundColor = UIColor.systemGray4
     }
     @IBAction func button5change(_ sender: Any) {
-        self.button5.backgroundColor = UIColor.systemGray5
+        self.button5.backgroundColor = UIColor.systemGray4
     }
     
     

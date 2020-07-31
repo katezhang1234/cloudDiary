@@ -347,7 +347,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.91777706150000005" green="0.92144531009999997" blue="0.93332773449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.92169862989999995" green="0.92536687849999999" blue="0.93724936250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="TFv-g3-Qub"/>
                     </view>
                     <navigationItem key="navigationItem" id="01x-cK-PPn"/>
@@ -420,13 +420,6 @@
                                     <segue destination="e2J-7a-hJJ" kind="show" id="2FF-F6-4yY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3k-C0-HHw">
-                                <rect key="frame" x="91" y="187" width="233" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friday, July 31st" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R56-JG-iou">
                                 <rect key="frame" x="0.0" y="75" width="414" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -470,6 +463,13 @@
                                     <segue destination="1VH-bA-1bb" kind="presentation" modalPresentationStyle="fullScreen" id="zNR-lZ-21J"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3k-C0-HHw">
+                                <rect key="frame" x="91" y="187" width="233" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92169862989999995" green="0.92536687849999999" blue="0.93724936250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="tPx-g0-dBQ"/>
@@ -776,10 +776,10 @@
             </objects>
             <point key="canvasLocation" x="-1639.1304347826087" y="1179.9107142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Sleep Tracker View Controller-->
         <scene sceneID="J9G-H0-L04">
             <objects>
-                <viewController id="juq-Km-1QO" sceneMemberID="viewController">
+                <viewController id="juq-Km-1QO" customClass="SleepTrackerViewController" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2V-pf-wcF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -826,11 +826,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I09-Mb-0Er">
+                                <rect key="frame" x="345" y="248" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterButtonTapped:" destination="juq-Km-1QO" eventType="touchUpInside" id="oF6-IQ-GkK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-7v-nhM">
+                                <rect key="frame" x="81" y="286" width="253" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92169862989999995" green="0.92536687849999999" blue="0.93724936250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="8Ud-eJ-Owq"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zro-mw-hoE"/>
+                    <connections>
+                        <outlet property="enterButton" destination="I09-Mb-0Er" id="0IF-0D-cDE"/>
+                        <outlet property="hoursText" destination="lwh-lA-g9k" id="F5G-l1-IhE"/>
+                        <outlet property="message" destination="BB3-7v-nhM" id="iMZ-Oa-d6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6I-00-O2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1181,8 +1203,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mzD-ZP-O7i"/>
-        <segue reference="Qeb-xN-2yF"/>
+        <segue reference="ln4-95-D8w"/>
+        <segue reference="TYU-4N-N8J"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="12ba72f0e3f84c4669cd8734d90ab395" width="512" height="512"/>
