@@ -1147,6 +1147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FGc-So-36x"/>
                     <connections>
+                        <outlet property="autoGenerateAppearance" destination="lMK-CT-bvN" id="Pla-4g-NSV"/>
                         <outlet property="collapseAppearance" destination="Pd3-mP-pkc" id="gnO-UJ-mjQ"/>
                         <outlet property="collapseLabel" destination="HyS-cl-q2M" id="DWc-wL-V9P"/>
                         <outlet property="darkToggleAppearance" destination="V21-bl-k9R" id="HYg-EK-byH"/>

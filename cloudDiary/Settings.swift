@@ -58,7 +58,14 @@ class Settings: UIViewController {
     @IBAction func notificationsToggle(_ sender: UISwitch) {
     }
     
+    @IBOutlet weak var autoGenerateAppearance: UISwitch!
+    
     @IBAction func autoGenerateToggle(_ sender: UISwitch) {
+        if Stored.preferences.autoOn{
+                   Stored.preferences.autoOn = false
+               }else{
+                   Stored.preferences.autoOn = true
+               }
     }
     
     func setExpandProperties(){
@@ -78,6 +85,14 @@ class Settings: UIViewController {
         }else{
             overrideUserInterfaceStyle = .light
             darkToggleAppearance.isOn = false
+        }
+    }
+    
+    func autoSettings(){
+        if Stored.preferences.autoOn{
+            autoGenerateAppearance.isOn = true
+        }else{
+            autoGenerateAppearance.isOn = false
         }
     }
 }

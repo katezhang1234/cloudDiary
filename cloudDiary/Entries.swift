@@ -30,6 +30,46 @@ class Entries: UITableViewController {
         setInterface()
     }
     
+    func runCode() {
+        let UserCalendar = Calendar.current
+        let now = Date()
+        let nowComponents = UserCalendar.dateComponents([.year, .month, .day], from: now)
+        var month = ""
+        if nowComponents.month == 1{
+            month = "January"
+        }else if nowComponents.month == 2{
+            month = "February"
+        }else if nowComponents.month == 3{
+            month = "March"
+        }else if nowComponents.month == 4{
+            month = "April"
+        }else if nowComponents.month == 5{
+            month = "May"
+        }else if nowComponents.month == 6{
+            month = "June"
+        }else if nowComponents.month == 7{
+            month = "July"
+        }else if nowComponents.month == 8{
+            month = "August"
+        }else if nowComponents.month == 9{
+            month = "September"
+        }else if nowComponents.month == 10{
+            month = "October"
+        }else if nowComponents.month == 11{
+            month = "November"
+        }else if nowComponents.month == 12{
+            month = "December"
+        }
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            let entry = EntryCD(entity: EntryCD.entity(), insertInto: context)
+            entry.title = "\(month) \(nowComponents.day!), \(nowComponents.year!)"
+            entry.subtitle = "At 9:30 AM, I went to the grocery store. \nAt 10:00 AM, I texted Claire on iMessages. \nAt 11:00 AM, I emailed Elaine about the koding project."
+            try? context.save()
+            getEntries()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,12 +99,16 @@ class Entries: UITableViewController {
     
     
     @IBAction func addButtonClicked(_ sender: Any) {
-        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
-            let entry = EntryCD(entity: EntryCD.entity(), insertInto: context)
-            entry.title = ""
-            entry.subtitle = ""
-            try? context.save()
-            getEntries()
+        if Stored.preferences.autoOn{
+            runCode()
+        }else{
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+                let entry = EntryCD(entity: EntryCD.entity(), insertInto: context)
+                entry.title = ""
+                entry.subtitle = ""
+                try? context.save()
+                getEntries()
+            }
         }
     }
     
