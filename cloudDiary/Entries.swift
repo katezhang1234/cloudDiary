@@ -8,37 +8,77 @@
 
 import UIKit
 
-//mini class that's a blueprint for a lot of objects
-//only properties, no actions (functions)
-struct Entry {
-    var title : String
-    var description : String
+class Selected{
+    static var current = Selected(index: -1)
+    var index: Int
+    init(index: Int){
+        self.index = index
+    }
 }
 
 class Entries: UITableViewController {
 
-    var allEntries = [Entry(title: "July 27", description: "Worked on wire frame"),
-    Entry(title: "July 28", description: "Went to the park"), Entry(title: "July 29", description: "Koded for a few hours")
-    ]
+    var allEntries: [EntryCD] = []
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        getEntries()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allEntries.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         cell.textLabel?.text = allEntries[indexPath.row].title
-        cell.detailTextLabel?.text = allEntries[indexPath.row].description
+        cell.detailTextLabel?.text = allEntries[indexPath.row].subtitle
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        //get rid of "Prototype Cells" Header
+        return nil
+    }
+    
+    
+    @IBAction func addButtonClicked(_ sender: Any) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            let entry = EntryCD(entity: EntryCD.entity(), insertInto: context)
+            entry.title = ""
+            entry.subtitle = ""
+            try? context.save()
+            getEntries()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            Selected.current.index = indexPath.row
+        }
+        
+        func getEntries(){
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+                if let coreDataEntries = try? context.fetch(EntryCD.fetchRequest()) as? [EntryCD]{
+                    allEntries = coreDataEntries
+                    tableView.reloadData()
+                }
+            }
+        }
+        
+        /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                tableView.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }*/
+        
+        //tableView.deselectRow(at: indexPath, animated: true)
+    }
 
-   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-          return nil
-          //get rid of annoying "Prototype Cells" header
-      }
-
-}

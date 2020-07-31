@@ -888,7 +888,7 @@
         <scene sceneID="zsC-g0-6jM">
             <objects>
                 <tableViewController id="ZEm-Fj-3vW" customClass="Entries" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOG-aq-VT3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOG-aq-VT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -958,7 +958,11 @@
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="action" id="JiP-Hk-uvY"/>
-                            <barButtonItem systemItem="search" id="0s2-0N-9D6"/>
+                            <barButtonItem systemItem="add" id="0s2-0N-9D6">
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="ZEm-Fj-3vW" id="zR2-OZ-Y6f"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
@@ -1113,10 +1117,10 @@
             </objects>
             <point key="canvasLocation" x="3174" y="-240"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Entries-->
         <scene sceneID="BVX-Dv-9QL">
             <objects>
-                <viewController id="SK8-qX-pi8" sceneMemberID="viewController">
+                <viewController id="SK8-qX-pi8" customClass="EditEntries" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jwe-9Z-PgY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1125,7 +1129,14 @@
                                 <rect key="frame" x="17" y="151" width="381" height="711"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <attributedString key="attributedText"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-uX-gae">
@@ -1133,10 +1144,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Title">
+                                    <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
+                                            <font key="NSFont" metaFont="system" size="21"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -1149,12 +1160,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="4iP-Lp-WuR">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="qFh-NS-Lwu"/>
+                            <barButtonItem systemItem="save" id="qFh-NS-Lwu">
+                                <connections>
+                                    <action selector="saveButton:" destination="SK8-qX-pi8" id="0Aa-8X-lvo"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="arrowshape.turn.up.right" catalog="system" id="5nP-Qh-ODy"/>
                             <barButtonItem image="arrowshape.turn.up.left" catalog="system" id="EaE-ZV-h1l"/>
                             <barButtonItem image="textformat" catalog="system" id="IbW-2A-pu8"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editSubtitle" destination="aNt-AY-ZPh" id="RE9-zT-6L0"/>
+                        <outlet property="editTitle" destination="tHH-uX-gae" id="wAa-uV-CsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f4-zs-I67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1162,8 +1181,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KmR-2v-xW5"/>
-        <segue reference="ln4-95-D8w"/>
+        <segue reference="mzD-ZP-O7i"/>
         <segue reference="Qeb-xN-2yF"/>
     </inferredMetricsTieBreakers>
     <resources>
