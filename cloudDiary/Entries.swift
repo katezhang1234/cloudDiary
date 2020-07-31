@@ -79,12 +79,19 @@ class Entries: UITableViewController {
             }
         }
         
-        /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                tableView.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }*/
+       override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+           return true
+       }
+
+       override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if (editingStyle == .delete) {
+               if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+                   context.delete(allEntries[indexPath.row])
+                   try? context.save()
+                   getEntries()
+               }
+           }
+       }
         
         //tableView.deselectRow(at: indexPath, animated: true)
     }
