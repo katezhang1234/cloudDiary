@@ -910,7 +910,7 @@
         <scene sceneID="zsC-g0-6jM">
             <objects>
                 <tableViewController id="ZEm-Fj-3vW" customClass="Entries" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOG-aq-VT3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOG-aq-VT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1010,10 +1010,10 @@
             </objects>
             <point key="canvasLocation" x="1632" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="cef-bZ-ugr">
             <objects>
-                <viewController id="amR-KP-Ayj" sceneMemberID="viewController">
+                <viewController id="amR-KP-Ayj" customClass="Settings" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2XD-5C-jb9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1031,7 +1031,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Settings">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="21"/>
+                                                        <font key="NSFont" metaFont="label" size="21"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -1059,6 +1059,9 @@
                                             <rect key="frame" x="347" y="5" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="collapseToggle:" destination="amR-KP-Ayj" eventType="valueChanged" id="haE-ke-djK"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1081,6 +1084,9 @@
                                             <rect key="frame" x="347" y="7" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="darkModeToggle:" destination="amR-KP-Ayj" eventType="valueChanged" id="cEp-wc-jaI"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1099,10 +1105,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-fK-VS1">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-fK-VS1">
                                             <rect key="frame" x="347" y="7" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="notificationsToggle:" destination="amR-KP-Ayj" eventType="valueChanged" id="pYg-5M-CXH"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1121,10 +1130,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-CT-bvN">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-CT-bvN">
                                             <rect key="frame" x="347" y="8" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="autoGenerateToggle:" destination="amR-KP-Ayj" eventType="valueChanged" id="ryO-Ey-Ayo"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1134,6 +1146,10 @@
                         <viewLayoutGuide key="safeArea" id="Mii-RG-DDv"/>
                     </view>
                     <navigationItem key="navigationItem" id="FGc-So-36x"/>
+                    <connections>
+                        <outlet property="collapseAppearance" destination="Pd3-mP-pkc" id="gnO-UJ-mjQ"/>
+                        <outlet property="collapseLabel" destination="HyS-cl-q2M" id="DWc-wL-V9P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z4-MD-obI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1177,7 +1193,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="VcH-MI-KP2"/>
                     </view>
                     <navigationItem key="navigationItem" id="4iP-Lp-WuR">
@@ -1203,7 +1219,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ln4-95-D8w"/>
+        <segue reference="mzD-ZP-O7i"/>
         <segue reference="TYU-4N-N8J"/>
     </inferredMetricsTieBreakers>
     <resources>

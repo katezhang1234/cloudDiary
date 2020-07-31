@@ -40,6 +40,13 @@ class Entries: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         cell.textLabel?.text = allEntries[indexPath.row].title
         cell.detailTextLabel?.text = allEntries[indexPath.row].subtitle
+
+        if Stored.preferences.isExpanded{
+            cell.detailTextLabel?.numberOfLines = 0
+            tableView.rowHeight = UITableView.automaticDimension
+        }else{
+            cell.detailTextLabel?.numberOfLines = 1
+        }
         return cell
     }
     
