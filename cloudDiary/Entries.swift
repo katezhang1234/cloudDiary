@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class Selected{
     static var current = Selected(index: -1)
@@ -20,14 +21,19 @@ class Entries: UITableViewController {
 
     var allEntries: [EntryCD] = []
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        setInterface()
-    }
-    
     override func viewWillAppear(_ animated: Bool){
         getEntries()
         setInterface()
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        getEntries()
+        setInterface()
+        
+        if Stored.preferences.autoOn{
+            generateEntries()
+        }
     }
     
     func runCode() {
@@ -64,7 +70,7 @@ class Entries: UITableViewController {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             let entry = EntryCD(entity: EntryCD.entity(), insertInto: context)
             entry.title = "\(month) \(nowComponents.day!), \(nowComponents.year!)"
-            entry.subtitle = "At 9:30 AM, I went to the grocery store. \nAt 10:00 AM, I texted Claire on iMessages. \nAt 11:00 AM, I emailed Elaine about the koding project."
+            entry.subtitle = " "
             try? context.save()
             getEntries()
         }
@@ -114,12 +120,14 @@ class Entries: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
             Selected.current.index = indexPath.row
-        }
+    }
         
         func getEntries(){
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
                 if let coreDataEntries = try? context.fetch(EntryCD.fetchRequest()) as? [EntryCD]{
                     allEntries = coreDataEntries
+                    //so that new entries will appear on the top
+                    allEntries.reverse()
                     tableView.reloadData()
                 }
             }
@@ -138,6 +146,7 @@ class Entries: UITableViewController {
                }
            }
        }
+    
         func setInterface(){
             if Stored.preferences.isDark{
                 overrideUserInterfaceStyle = .dark
@@ -145,5 +154,23 @@ class Entries: UITableViewController {
                 overrideUserInterfaceStyle = .light
             }
         }
+    
+    func generateEntries(){
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            if let previous = try? context.fetch(DateCD.fetchRequest()) as? DateCD{
+                let previousCalendar = Calendar.current
+                var previousComponents = previousCalendar.dateComponents([.year, .month, .day, .hour, .minute], from: previous.previousDate!)
+                let userCalendar = Calendar.current
+                let nowDate = Date()
+                let nowDateComponents = userCalendar.dateComponents([.year, .month, .day, .hour, .minute], from: nowDate)
+                if nowDateComponents.year != previousComponents.year || nowDateComponents.month != previousComponents.month || nowDateComponents.day != previousComponents.day{
+                    runCode()
+                    print("Entry was generated")
+                    previous.previousDate = nowDate
+                    previousComponents = nowDateComponents
+                }
+            }
+        }
+    }
 }
 

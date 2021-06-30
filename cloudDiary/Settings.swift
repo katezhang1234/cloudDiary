@@ -23,15 +23,15 @@ class Stored{
 }
 
 class Settings: UIViewController {
-
-    @IBOutlet weak var collapseLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setExpandProperties()
         setInterface()
+        autoSettings()
     }
    
+    @IBOutlet weak var collapseLabel: UILabel!
     
     @IBOutlet weak var collapseAppearance: UISwitch!
     
