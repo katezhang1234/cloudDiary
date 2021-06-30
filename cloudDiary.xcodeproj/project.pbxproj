@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DA2833F24D3B97F00F834C2 /* SleepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA2833E24D3B97F00F834C2 /* SleepTrackerViewController.swift */; };
-		5DB4127024D1FFE400CD3CE8 /* HabitTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB4126F24D1FFE400CD3CE8 /* HabitTrackerViewController.swift */; };
-		5DB4127624D21B3000CD3CE8 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB4127524D21B3000CD3CE8 /* MoodTrackerViewController.swift */; };
 		5DC258D424D1244A00CB764D /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC258D324D1244A00CB764D /* TrackerViewController.swift */; };
-		5DC258D824D1307100CB764D /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC258D724D1307100CB764D /* ToDo.swift */; };
 		B5BB53F924D24A8C00371F0E /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB53F824D24A8C00371F0E /* Entries.swift */; };
 		B5BB541124D3B2EC00371F0E /* EditEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB541024D3B2EC00371F0E /* EditEntries.swift */; };
 		B5BB541524D3E2B100371F0E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB541424D3E2B100371F0E /* Settings.swift */; };
@@ -45,10 +42,7 @@
 
 /* Begin PBXFileReference section */
 		5DA2833E24D3B97F00F834C2 /* SleepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackerViewController.swift; sourceTree = "<group>"; };
-		5DB4126F24D1FFE400CD3CE8 /* HabitTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerViewController.swift; sourceTree = "<group>"; };
-		5DB4127524D21B3000CD3CE8 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
 		5DC258D324D1244A00CB764D /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
-		5DC258D724D1307100CB764D /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		B5BB53F824D24A8C00371F0E /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
 		B5BB541024D3B2EC00371F0E /* EditEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntries.swift; sourceTree = "<group>"; };
 		B5BB541424D3E2B100371F0E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -97,7 +91,6 @@
 		B5EAD77D24CED94E000C494D = {
 			isa = PBXGroup;
 			children = (
-				5DC258D724D1307100CB764D /* ToDo.swift */,
 				B5EAD78824CED94E000C494D /* cloudDiary */,
 				B5EAD7A224CED952000C494D /* cloudDiaryTests */,
 				B5EAD7AD24CED952000C494D /* cloudDiaryUITests */,
@@ -122,12 +115,10 @@
 				B5EAD78B24CED94E000C494D /* SceneDelegate.swift */,
 				B5EAD78D24CED94E000C494D /* ViewController.swift */,
 				B5EAD78F24CED94E000C494D /* Main.storyboard */,
-				5DA2833E24D3B97F00F834C2 /* SleepTrackerViewController.swift */,
 				B5BB53F824D24A8C00371F0E /* Entries.swift */,
 				B5BB541024D3B2EC00371F0E /* EditEntries.swift */,
 				B5BB541424D3E2B100371F0E /* Settings.swift */,
-				5DB4127524D21B3000CD3CE8 /* MoodTrackerViewController.swift */,
-				5DB4126F24D1FFE400CD3CE8 /* HabitTrackerViewController.swift */,
+				5DA2833E24D3B97F00F834C2 /* SleepTrackerViewController.swift */,
 				5DC258D324D1244A00CB764D /* TrackerViewController.swift */,
 				B5EAD79524CED952000C494D /* Assets.xcassets */,
 				B5EAD79724CED952000C494D /* LaunchScreen.storyboard */,
@@ -290,14 +281,11 @@
 				B5EAD78E24CED94E000C494D /* ViewController.swift in Sources */,
 				B5BB53F924D24A8C00371F0E /* Entries.swift in Sources */,
 				B5EAD78A24CED94E000C494D /* AppDelegate.swift in Sources */,
-				5DC258D824D1307100CB764D /* ToDo.swift in Sources */,
-				5DB4127624D21B3000CD3CE8 /* MoodTrackerViewController.swift in Sources */,
 				B5BB541524D3E2B100371F0E /* Settings.swift in Sources */,
 				B5EAD78C24CED94E000C494D /* SceneDelegate.swift in Sources */,
 				5DA2833F24D3B97F00F834C2 /* SleepTrackerViewController.swift in Sources */,
 				B5BB541124D3B2EC00371F0E /* EditEntries.swift in Sources */,
 				B5EAD79424CED94E000C494D /* cloudDiary.xcdatamodeld in Sources */,
-				5DB4127024D1FFE400CD3CE8 /* HabitTrackerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -456,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

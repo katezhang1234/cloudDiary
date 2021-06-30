@@ -2,17 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Habit Tracker View Controller-->
+        <!--View Controller-->
         <scene sceneID="Evr-Zx-zSa">
             <objects>
-                <viewController id="Oxf-cS-8Md" customClass="HabitTrackerViewController" customModule="cloudDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Oxf-cS-8Md" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ovy-iw-TqC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,9 +53,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="button2change:" destination="Oxf-cS-8Md" eventType="touchUpInside" id="ZCy-Lc-lre"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPt-8u-so7">
                                 <rect key="frame" x="176" y="266" width="42" height="39"/>
@@ -66,9 +62,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="button5change:" destination="Oxf-cS-8Md" eventType="touchUpInside" id="G9k-Lf-zvE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-x8-dqc">
                                 <rect key="frame" x="210" y="266" width="42" height="39"/>
@@ -123,9 +116,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="button1change:" destination="Oxf-cS-8Md" eventType="touchUpInside" id="iKS-yy-x6k"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6u-SA-nki">
                                 <rect key="frame" x="176" y="342" width="42" height="39"/>
@@ -203,9 +193,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="button3change:" destination="Oxf-cS-8Md" eventType="touchUpInside" id="JfM-tw-8DQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUo-NX-zQh">
                                 <rect key="frame" x="176" y="427" width="42" height="39"/>
@@ -276,9 +263,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="button4change:" destination="Oxf-cS-8Md" eventType="touchUpInside" id="oBa-Lh-sog"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNE-WP-6Aa">
                                 <rect key="frame" x="176" y="507" width="42" height="39"/>
@@ -353,13 +337,6 @@
                         <color key="backgroundColor" red="0.92169862989999995" green="0.92536687849999999" blue="0.93724936250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="01x-cK-PPn"/>
-                    <connections>
-                        <outlet property="button1" destination="Ggs-tt-jFg" id="Wld-Fu-IwF"/>
-                        <outlet property="button2" destination="OW3-Cg-BmN" id="Ybq-4Q-wRK"/>
-                        <outlet property="button3" destination="Obt-5s-Ped" id="dC7-q4-8ha"/>
-                        <outlet property="button4" destination="AOT-vB-16O" id="wav-Mc-5Ft"/>
-                        <outlet property="button5" destination="RPt-8u-so7" id="PKN-8O-Emz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdm-uU-pmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -520,6 +497,11 @@
                                 <state key="normal" title="Trackers">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="mKc-KF-h0R" kind="presentation" modalPresentationStyle="fullScreen" id="TYU-4N-N8J"/>
                                 </connections>
@@ -532,6 +514,11 @@
                                 <state key="normal" title="Diary">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="ymK-ws-1SI" kind="presentation" modalPresentationStyle="fullScreen" id="3dJ-Sw-yOS"/>
                                 </connections>
@@ -542,10 +529,6 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="MO3-0P-dpl"/>
-                    <connections>
-                        <outlet property="diaryButton" destination="1Ce-el-T1F" id="UjI-Rr-hzO"/>
-                        <outlet property="trackerButton" destination="gvs-Hd-ydd" id="dbo-oe-9xy"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -589,9 +572,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="happyTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="Gup-M7-Bsj"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOg-YZ-eVt">
                                 <rect key="frame" x="286" y="313" width="42" height="39"/>
@@ -601,9 +581,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="excitedTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="2UX-uC-qEv"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-3R-HHw">
                                 <rect key="frame" x="287" y="407" width="42" height="39"/>
@@ -613,9 +590,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="lazyTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="YyR-RB-bQK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm9-zW-vZG">
                                 <rect key="frame" x="287" y="454" width="42" height="39"/>
@@ -625,9 +599,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="tiredTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="4DB-Bh-IEM"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgk-66-0wG">
                                 <rect key="frame" x="287" y="501" width="42" height="39"/>
@@ -637,9 +608,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="lonelyTappen:" destination="1VH-bA-1bb" eventType="touchUpInside" id="ziq-SN-1WT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wn3-Az-fBb">
                                 <rect key="frame" x="287" y="548" width="42" height="39"/>
@@ -649,9 +617,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="sadTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="cBc-nJ-j1m"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-O0-YyW">
                                 <rect key="frame" x="287" y="360" width="42" height="39"/>
@@ -661,9 +626,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="curiousTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="XBW-9i-7rR"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-X9-AmN">
                                 <rect key="frame" x="287" y="595" width="42" height="39"/>
@@ -673,9 +635,6 @@
                                 <state key="normal" image="square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="medium"/>
                                 </state>
-                                <connections>
-                                    <action selector="boredTapped:" destination="1VH-bA-1bb" eventType="touchUpInside" id="Xsb-Yl-XH9"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Happy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvr-1T-WTe">
                                 <rect key="frame" x="61" y="265" width="93" height="34"/>
@@ -753,16 +712,6 @@
                         <color key="backgroundColor" red="0.92169862989999995" green="0.92536687849999999" blue="0.93724936250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="iYb-Uh-unz"/>
-                    <connections>
-                        <outlet property="boredButton" destination="lmk-X9-AmN" id="N8G-tH-ed9"/>
-                        <outlet property="curiousButton" destination="NMl-O0-YyW" id="hUJ-rn-VTM"/>
-                        <outlet property="excitedButton" destination="VOg-YZ-eVt" id="ZvF-ZG-HEP"/>
-                        <outlet property="happyButton" destination="FL3-rN-Hk4" id="wsk-wo-a7x"/>
-                        <outlet property="lazyButton" destination="tLz-3R-HHw" id="xXN-Lv-vRk"/>
-                        <outlet property="lonelyButton" destination="Vgk-66-0wG" id="zK2-k3-ZTm"/>
-                        <outlet property="sadButton" destination="wn3-Az-fBb" id="Ade-BK-VPu"/>
-                        <outlet property="tiredButton" destination="Cm9-zW-vZG" id="SVS-Yc-TkF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4N4-0F-59n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1214,7 +1163,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="mzD-ZP-O7i"/>
-        <segue reference="TYU-4N-N8J"/>
+        <segue reference="F4m-El-RcF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="12ba72f0e3f84c4669cd8734d90ab395" width="512" height="512"/>

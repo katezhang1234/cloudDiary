@@ -13,11 +13,13 @@ class SleepTrackerViewController: UIViewController {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var hoursText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
        
     }
+    
     
     @IBAction func enterButtonTapped(_ sender: Any) {
         
@@ -36,7 +38,6 @@ class SleepTrackerViewController: UIViewController {
             }
         }
     }
-    
     
     
 }

@@ -10,39 +10,19 @@ import UIKit
 
 class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     @IBOutlet weak var tableView: UITableView!
-    var toDos : [ToDo] = []
+    
+    var toDos = ["Learn Swift",
+                "Do the dishes",
+                "Clean bedroom",
+                "Read Harry Potter"]
+    
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        toDos = createToDos()
-        // Do any additional setup after loading the view.
     }
     
     
-    
-   func createToDos() -> [ToDo]{
-         let swift = ToDo()
-         swift.name = "Learn Swift"
-         
-         let dog = ToDo()
-         dog.name = "Do the dishes"
-        let clean = ToDo()
-        clean.name = "Clean bedroom"
-        let read = ToDo()
-        read.name = "Read Harry Potter"
-          
-         return [swift, dog, clean, read]
-     }
-     
-    
-    
-
-     // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int{
-         return 1
-     }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return toDos.count
      }
@@ -50,16 +30,8 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-         let toDo = toDos[indexPath.row]
-         cell.textLabel?.text = toDo.name
-
+         cell.textLabel?.text = toDos[indexPath.row]
          return cell
-     }
-     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-         
-         let toDo = toDos[indexPath.row]
-         
      }
 
 

@@ -10,16 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
-    @IBOutlet weak var trackerButton: UIButton!
-    @IBOutlet weak var diaryButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        trackerButton.layer.cornerRadius = 10
-        diaryButton.layer.cornerRadius = 10
-        
-        // Do any additional setup after loading the view.
     }
 
 
