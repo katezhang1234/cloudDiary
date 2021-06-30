@@ -90,6 +90,7 @@ class Entries: UITableViewController {
         cell.detailTextLabel?.text = allEntries[indexPath.row].subtitle
 
         if Stored.preferences.isExpanded{
+            cell.textLabel?.numberOfLines = 0
             cell.detailTextLabel?.numberOfLines = 0
             tableView.rowHeight = UITableView.automaticDimension
         }else{
@@ -119,13 +120,15 @@ class Entries: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-            Selected.current.index = indexPath.row
+        Selected.current.index = allEntries.count - indexPath.row - 1
     }
-        
+       
+    
         func getEntries(){
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
                 if let coreDataEntries = try? context.fetch(EntryCD.fetchRequest()) as? [EntryCD]{
                     allEntries = coreDataEntries
+                    
                     //so that new entries will appear on the top
                     allEntries.reverse()
                     tableView.reloadData()
@@ -133,10 +136,12 @@ class Entries: UITableViewController {
             }
         }
         
+    
        override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
            return true
        }
 
+    
        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
            if (editingStyle == .delete) {
                if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
@@ -147,6 +152,7 @@ class Entries: UITableViewController {
            }
        }
     
+    
         func setInterface(){
             if Stored.preferences.isDark{
                 overrideUserInterfaceStyle = .dark
@@ -154,6 +160,7 @@ class Entries: UITableViewController {
                 overrideUserInterfaceStyle = .light
             }
         }
+    
     
     func generateEntries(){
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{

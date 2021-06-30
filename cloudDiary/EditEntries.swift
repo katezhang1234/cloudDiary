@@ -14,7 +14,7 @@ class EditEntries: UIViewController {
         super.viewDidLoad()
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             if let coreDataEntries = try? context.fetch(EntryCD.fetchRequest()) as? [EntryCD]{
-                let editIndex = coreDataEntries.count-Selected.current.index-1
+                let editIndex = Selected.current.index
                 editTitle.text = coreDataEntries[editIndex].title
                 editSubtitle.text = coreDataEntries[editIndex].subtitle
             }
@@ -30,8 +30,9 @@ class EditEntries: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             if let coreDataEntries = try? context.fetch(EntryCD.fetchRequest()) as? [EntryCD]{
-                coreDataEntries[coreDataEntries.count-Selected.current.index-1].title = editTitle.text
-                coreDataEntries[coreDataEntries.count-Selected.current.index-1].subtitle = editSubtitle.text
+                coreDataEntries[Selected.current.index].title = editTitle.text
+                
+                coreDataEntries[Selected.current.index].subtitle = editSubtitle.text
                 try? context.save()
                 navigationController?.popViewController(animated: true)
             }
